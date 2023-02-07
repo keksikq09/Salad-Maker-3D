@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fc67be8b9999484c8070e1419b1c6bc, type: 3}
-  m_Name: PErchik
+  m_Name: Cucumber
   m_EditorClassIdentifier: 
-  _mainMesh: {fileID: -6550263775595917909, guid: 6f40a3af12beaf641993a10439da390d,
+  _mainMesh: {fileID: 4089825574428223568, guid: 6f40a3af12beaf641993a10439da390d,
     type: 3}
   _startGraterValue: 0.2
   _gratedObjectPrefabs:
-  - {fileID: 8063839808146149461, guid: d274528ae69f6464dbbf688690e8f496, type: 3}
+  - {fileID: 8063839808146149461, guid: c5203220bab944a4983c82eacae1bf50, type: 3}
