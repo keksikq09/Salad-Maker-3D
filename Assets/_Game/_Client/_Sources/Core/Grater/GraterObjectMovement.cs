@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Game
+namespace Game.Core.Grater
 {
     public class GraterObjectMovement : MonoBehaviour
     {
@@ -26,7 +26,7 @@ namespace Game
                         _transform = hit.transform;
                         _offset = _transform.position - hit.point;
                         _distance = hit.distance;
-                    }                    
+                    }
                 }
             }
             if (Input.GetMouseButton(0) && !Input.GetMouseButtonDown(0) && _transform != null)
@@ -36,7 +36,7 @@ namespace Game
             }
 
             if (Input.GetMouseButtonUp(0))
-             _transform = null;
+                _transform = null;
         }
     }
 }

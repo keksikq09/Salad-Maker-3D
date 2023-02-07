@@ -1,7 +1,7 @@
 ﻿using Game.Data;
 using UnityEngine;
 
-namespace Game.Global
+namespace Game.Core.Factories
 {
     public class GrateredObjectsFactory : MonoBehaviour
     {

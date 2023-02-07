@@ -15,4 +15,5 @@ MonoBehaviour:
   _mainMesh: {fileID: -6550263775595917909, guid: 6f40a3af12beaf641993a10439da390d,
     type: 3}
   _startGraterValue: 0.2
-  _gratedObjectPrefab: {fileID: 0}
+  _gratedObjectPrefabs:
+  - {fileID: 8063839808146149461, guid: d274528ae69f6464dbbf688690e8f496, type: 3}

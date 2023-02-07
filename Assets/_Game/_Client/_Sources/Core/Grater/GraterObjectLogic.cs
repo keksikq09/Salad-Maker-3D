@@ -1,13 +1,21 @@
 ﻿using Game.Data;
+using Game.Core.Factories;
 using UnityEngine;
 
 namespace Game.Core.Grater
 {
     public class GraterObjectLogic : MonoBehaviour
     {
-        [Header("Fruit Settings")]
+        [Header("Grating Settings")]
         [SerializeField]
         private GraterData[] _graterObjectsData;
+
+        [Header("Fields")]
+        [SerializeField]
+        private GrateredObjectsFactory _graterObjectsFactory;
+
+        [SerializeField]
+        private Transform _originPosition;
 
         private GraterObjectView _objectView;
         private GraterData _currentData;
@@ -51,9 +59,19 @@ namespace Game.Core.Grater
 
             _objectView.UpdateRubbering(_rubbingValue);
 
-            if(_rubbingValue > -0.1)
+            TryBeGratted();
+
+            if (_rubbingValue > -0.1)
             {
-                //reset game.
+                Debug.Log("@ Reseted");
+            }
+        }
+
+        private void TryBeGratted()
+        {
+            if (System.Math.Round((double)(_rubbingValue / (0.2 / 100))) % 2 == 0)
+            {
+                _graterObjectsFactory.CreateGrateredObject(_currentData);
             }
         }
 
