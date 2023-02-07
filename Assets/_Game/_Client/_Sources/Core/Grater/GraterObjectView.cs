@@ -16,6 +16,16 @@ namespace Game.Core.Grater
             _material = _meshRenderer.material;
         }
 
+        public void ShowObject()
+        {
+            _meshRenderer.enabled = true;
+        }
+
+        public void HideObject()
+        {
+            _meshRenderer.enabled = false;
+        }
+
         public void UpdateView(GraterData fruitData)
         {
             _meshFilter.mesh = fruitData.MainMesh;

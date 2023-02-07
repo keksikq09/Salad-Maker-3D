@@ -15,18 +15,14 @@ namespace Game.Core.Grater
         private GrateredObjectsFactory _graterObjectsFactory;
 
         [SerializeField]
-        private Transform _originPosition;
+        private GrattingReset _grattingReset;
 
         private GraterObjectView _objectView;
         private GraterData _currentData;
-
         private BoxCollider _collider;
-
-        private Vector3 _oldPosition;
-
         private float _rubbingValue;
-
         private bool _inGrather;
+        private Vector3 _oldPosition;
 
         private const float _removedRubbingValue = 0.0145f;
         private const float _colliderMovementOffset = 0.00240f;
@@ -37,6 +33,14 @@ namespace Game.Core.Grater
             _oldPosition = transform.position;           
             _objectView.UpdateView(_currentData);
             _rubbingValue = _currentData.StartGraterValue;        
+        }
+
+        public void ResetRubbing(GraterData newData)
+        {
+            _currentData = newData;
+            _rubbingValue = _currentData.StartGraterValue;
+            Destroy(_collider);
+            _collider = gameObject.AddComponent<BoxCollider>();
         }
 
         private void Update()
@@ -61,9 +65,9 @@ namespace Game.Core.Grater
 
             TryBeGratted();
 
-            if (_rubbingValue > -0.1)
+            if (_rubbingValue < -0.1)
             {
-                Debug.Log("@ Reseted");
+                _grattingReset.ResetGrater();
             }
         }
 
